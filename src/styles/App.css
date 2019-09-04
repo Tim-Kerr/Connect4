@@ -24,8 +24,19 @@
 }
 
 .board {
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.board-img {
   margin-top: 75px;
-  max-width: 100%;
+  position: relative;
+  left: 0;
   width: 100%;
   height: auto;
+}
+
+.gamepiece {
+  position: absolute;
 }
