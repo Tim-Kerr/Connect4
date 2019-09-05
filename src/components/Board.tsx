@@ -16,10 +16,15 @@ const Board: React.FC = () => {
         console.log('useEffect ran');
         const svg = SVG('svg').size(600, 500);
         const rect = svg.rect(600, 500).fill({ color: '#2b7cff' });
-        const circle = svg.circle(50).fill('black').attr({ r: '5%', cx: '8%', cy: '8%' });
+
         const maskRect = svg.rect(0, 0).fill('white').attr({ width: '100%', height: '100%' });
-        const mask = svg.mask().add(maskRect).add(circle);
+        const mask = svg.mask().add(maskRect)
         rect.maskWith(mask);
+
+        for (let i = 0; i < 42; i++) {
+            const maskCircle = svg.circle(50).fill('black').attr({ r: `5%`, cx: `${12.5 * ((i % 7) + 1)}%`, cy: `${14 * (Math.floor(i / 7) + 1)}%` });
+            mask.add(maskCircle);
+        }
 
     });
 
