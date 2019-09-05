@@ -16,7 +16,7 @@ const Board: React.FC = () => {
         console.log('useEffect ran');
         const svg = SVG('svg').size(600, 500);
         const rect = svg.rect(600, 500).fill({ color: '#2b7cff' });
-        const circle = svg.ellipse(50, 50).move(10, 10).fill('black').attr({ width: '12.5%', height: '12.5%' });
+        const circle = svg.circle(50).fill('black').attr({ r: '5%', cx: '8%', cy: '8%' });
         const maskRect = svg.rect(0, 0).fill('white').attr({ width: '100%', height: '100%' });
         const mask = svg.mask().add(maskRect).add(circle);
         rect.maskWith(mask);
@@ -35,7 +35,6 @@ const Board: React.FC = () => {
         // </div>
 
         <div className='board'>
-            test
             <div id='svg' />
             {/* <div className="cols">
                 <div></div>
