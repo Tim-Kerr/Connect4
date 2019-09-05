@@ -28,7 +28,7 @@ const Game: React.FC = () => {
         <button onClick={() => startGame(Color.RED)}>Red</button>
         <button onClick={() => startGame(Color.BLACK)}>Black</button>
       </Modal>
-      {gameStart && <Board />}
+      {gameStart && <Board turn={turn} />}
       {/* {gameStart && <GamePiece color={turn} />} */}
     </div>
   );
