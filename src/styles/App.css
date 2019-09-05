@@ -40,3 +40,8 @@
 .gamepiece {
   position: absolute;
 }
+
+.board svg {
+  width: 100%;
+  height: auto;
+}

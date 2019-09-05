@@ -29,7 +29,7 @@ const Game: React.FC = () => {
         <button onClick={() => startGame(Color.BLACK)}>Black</button>
       </Modal>
       {gameStart && <Board />}
-      {gameStart && <GamePiece color={turn} />}
+      {/* {gameStart && <GamePiece color={turn} />} */}
     </div>
   );
 }
