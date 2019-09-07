@@ -23,20 +23,50 @@
   color: #61dafb;
 }
 
-.board {
+.topRow {
+  display: flex;
+  justify-content: center;
   max-width: 550px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.board-img {
+.topRow > div {
+  margin: 1%;
+  width: calc(80% * 1/7);
+  height: 0;
+  padding-top: calc(80% * 1/7);
+  background-color: white;
+  border-radius: 50%;
+}
+
+.board {
+  background-color: blue;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.board > div {
+  margin: 1%;
+  width: calc(80% * 1/7);
+  height: 0;
+  padding-top: calc(80% * 1/7);
+  background-color: whitesmoke;
+  border-radius: 50%;
+}
+
+/* .board-img {
   margin-top: 75px;
   position: relative;
   left: 0;
   width: 100%;
   height: auto;
-}
-
+} */
+/* 
 .gamepiece {
   position: absolute;
-}
+} */

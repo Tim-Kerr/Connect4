@@ -8,7 +8,9 @@ import { Color } from '../enums/Color';
 const Game: React.FC = () => {
   const [gameStart, setGameStart] = useState(false);
   const [turn, setTurn] = useState(Color.NONE);
-  const [animatingDrop, setAnimatingDrop] = useState(false);
+  const [board, setBoard] = useState<Color[][]>([[], [], [], [], [], [], []]);
+  const [turnCount, setTurnCount] = useState(0);
+
 
   const startGame = (p1Color: Color) => {
     setGameStart(true);
@@ -28,8 +30,15 @@ const Game: React.FC = () => {
         <button onClick={() => startGame(Color.RED)}>Red</button>
         <button onClick={() => startGame(Color.BLACK)}>Black</button>
       </Modal>
-      {gameStart && <Board />}
-      {gameStart && <GamePiece color={turn} />}
+      {gameStart && <Board
+        board={board}
+        onTurnFinish={(column: number) => {
+          board[column].push(turn); // Push the gamepiece onto the column
+          setBoard([...board]);
+          setTurn((turn === Color.RED) ? Color.BLACK : Color.RED);
+          setTurnCount(turnCount + 1);
+        }}
+        turn={turn} />}
     </div>
   );
 }
