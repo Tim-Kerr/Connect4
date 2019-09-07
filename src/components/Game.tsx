@@ -10,7 +10,7 @@ const Game: React.FC = () => {
   const [turn, setTurn] = useState(Color.NONE);
   const [board, setBoard] = useState<Color[][]>([[], [], [], [], [], [], []]);
   const [turnCount, setTurnCount] = useState(0);
-
+  const [gameEnd, setGameEnd] = useState(false);
 
   const startGame = (p1Color: Color) => {
     setGameStart(true);

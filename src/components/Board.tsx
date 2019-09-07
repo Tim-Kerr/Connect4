@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import board from '../assets/board.svg';
 import { Color } from '../enums/Color';
 
 interface IBoardProps {
@@ -24,8 +23,8 @@ const Board: React.FC<IBoardProps> = (props) => {
     const renderSlots = () => {
         const slots = [];
         for (let i = 0; i < 42; i++) {
-            const column = board[i % 7];
-            const slot = props.board[i % 7][Math.floor(i / 7)];
+            const column = props.board[i % 7];
+            const slot = props.board[i % 7][5 - Math.floor(i / 7)];
             let color;
             if (slot) {
                 color = (slot === Color.RED) ? 'red' : 'black';
