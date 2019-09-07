@@ -15,6 +15,10 @@ const Game: React.FC = () => {
     setTurn(p1Color);
   }
 
+  const turnChange = () => {
+    setTurn((turn === Color.RED) ? Color.BLACK : Color.RED);
+  };
+
   return (
     <div className="App">
       <Modal
@@ -28,7 +32,10 @@ const Game: React.FC = () => {
         <button onClick={() => startGame(Color.RED)}>Red</button>
         <button onClick={() => startGame(Color.BLACK)}>Black</button>
       </Modal>
-      {gameStart && <Board turn={turn} />}
+      {gameStart && <Board
+        turn={turn}
+        onTurnChange={turnChange}
+      />}
       {/* {gameStart && <GamePiece color={turn} />} */}
     </div>
   );
