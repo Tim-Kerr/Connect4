@@ -33,8 +33,8 @@ const Game: React.FC = () => {
         showCloseIcon={false}
       >
         <h1>Player 1 - Choose a color</h1>
-        <button onClick={() => startGame(Color.RED)}>Red</button>
-        <button onClick={() => startGame(Color.BLACK)}>Black</button>
+        <button className='gameButton redButton' onClick={() => startGame(Color.RED)}>RED</button>
+        <button className='gameButton blackButton' onClick={() => startGame(Color.BLACK)}>BLACK</button>
       </Modal>
 
       {gameEnd &&
@@ -47,14 +47,14 @@ const Game: React.FC = () => {
         >
           {(winner !== Color.NONE) &&
             <h1>
-              {(winner === Color.RED) ? 'Red' : 'Black'} Player Wins!
+              {(winner === Color.RED) ? 'RED' : 'BLACK'} Player Wins!
             </h1>}
 
           {(winner === Color.NONE) &&
-            <h1>Tie Game!</h1>
+            <h1>TIE Game!</h1>
           }
 
-          <button onClick={() => {
+          <button className='okButton' onClick={() => {
             setBoard([[], [], [], [], [], [], []]);
             setTurnCount(0);
             setGameEnd(false);

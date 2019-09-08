@@ -38,6 +38,27 @@
   border-radius: 50%;
 }
 
-.button {
+.redButton {
+  background-color: red;
+}
 
+.blackButton {
+  background-color: black;
+  float: right;
+}
+
+.okButton {
+  margin: auto;
+  width: 50%;
+  padding: 15px;
+  border: solid 1px black;
+  display: block;
+}
+
+.gameButton {
+  color: white;
+  padding: 15px;
+  border: none;
+  margin-left: 20px;
+  margin-right: 20px;
 }
