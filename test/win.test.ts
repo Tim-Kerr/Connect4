@@ -163,3 +163,26 @@ test('3 in a row. No win', () => {
 
     expect(win(board, Color.RED, 3)).toBe(false);
 });
+
+
+/**
+ * O  O  O  O  O  O  O
+ * O  O  O  O  O  O  O
+ * O  O  O  O  O  O  O
+ * O  O  O  O  O  O  O
+ * O  O  O  O  O  O  O
+ * R  B  0  R  O  R  O
+ */
+test('Gaps in between matching colors within match range. No win', () => {
+    const board: Color[][] = [
+        [Color.RED],
+        [Color.BLACK],
+        [],
+        [Color.RED],
+        [],
+        [Color.RED],
+        []
+    ];
+
+    expect(win(board, Color.RED, 2)).toBe(false);
+});
