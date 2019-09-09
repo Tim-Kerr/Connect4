@@ -48,6 +48,7 @@ const check = (xTraversalFunc: (x: number) => number, yTraversalFunc: (y: number
         if (y >= board[x].length || y < 0) break;
 
         if (board[x][y] === color) count++;
+        else break;
     }
 
     return count;
