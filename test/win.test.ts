@@ -186,3 +186,25 @@ test('Gaps in between matching colors within match range. No win', () => {
 
     expect(win(board, Color.RED, 2)).toBe(false);
 });
+
+/**
+ * O  O  O  O  O  O  O
+ * O  R  O  O  O  O  O
+ * O  R  B  O  O  O  O
+ * O  B  R  O  O  O  O
+ * O  B  R  B  R  O  O
+ * R  B  B  R  B  R  O
+ */
+test('Opposing pieces in between matching colors within match range. No win', () => {
+    const board: Color[][] = [
+        [Color.RED],
+        [Color.BLACK, Color.BLACK, Color.BLACK, Color.RED, Color.RED],
+        [Color.BLACK, Color.RED, Color.RED, Color.BLACK],
+        [Color.RED, Color.BLACK],
+        [Color.BLACK, Color.RED],
+        [Color.RED],
+        []
+    ];
+
+    expect(win(board, Color.RED, 3)).toBe(false);
+});
